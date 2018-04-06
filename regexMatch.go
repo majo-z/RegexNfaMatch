@@ -50,7 +50,7 @@ func postRegToNfa(pofix string) *nfa {
 			initial := state{edge1: frag1.initial, edge2: frag2.initial}
 			accept := state{} //new blank accept state
 			frag1.accept.edge1 = &accept
-			frag2.accept.edge1 = &accept//frag2 accept state is no longer accept state, it points at new created accept state
+			frag2.accept.edge1 = &accept //frag2 accept state is no longer accept state, it points at new created accept state
 
 			//push to stack new initial & accept state
 			nfaStack = append(nfaStack, &nfa{initial: &initial, accept: &accept})
@@ -78,9 +78,9 @@ func postRegToNfa(pofix string) *nfa {
 			initial := state{symbol: r, edge1: &accept}
 			//push to stack
 			nfaStack = append(nfaStack, &nfa{initial: &initial, accept: &accept})
-		}//switch
+		} //switch
 
-	}//for
+	} //for
 
 	//if there is more than one item at the stack at the end
 	if len(nfaStack) != 1 {
@@ -91,10 +91,47 @@ func postRegToNfa(pofix string) *nfa {
 
 } //postRegToNfa
 
+//poMatch runs string against regular expression to evaluate if it's valid
+func poMatch(poReg string, testString string) bool {
+
+	isMatch := false             //string doesn't match the regular expression
+	poNfa := postRegToNfa(poReg) //link list of states..creates NFA from regex
+
+	current := []*state{} //keep track of list of current states in NFA
+	next := []*state{}    //keep track of states that can move to from current along the arrows, including ϵ arrows
+
+	//decide what the current array should be initially
+
+
+	for _, r := range testString { //loop through a character at a time
+		for _, c := range current { //loop through the current state that I'm in
+
+			if c.symbol == r {
+				//add current state to next state(also add any state to get from current state along ϵ arrows)
+			}
+		}
+
+		/*
+		after reading the character and following the arrows,
+		the current state is old and is replaced with next state,
+		next state is reset to blank set of states to get ready for next character
+		*/
+		current, next = next, []*state{}
+	}
+
+	//very end state(final set of states) - after reading whole string,
+	for _, c := range current {
+		if c == poNfa.accept { //if the current state lopping through in is equal to accept state of nfa
+			isMatch = true
+			break
+		}
+	}
+
+	return isMatch
+} //poMatch
 
 func main() {
 	//postfix regular expression test matching empty string(zero number of c's) or ab or 1/more c's
 	fmt.Println(poMatch("ab.c*|", "cccc"))
-
 
 }

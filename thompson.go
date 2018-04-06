@@ -82,6 +82,10 @@ func postRegToNfa(pofix string) *nfa {
 
 	}//for
 
+	//if there is more than one item at the stack at the end
+	if len(nfaStack) != 1 {
+		fmt.Println("Uh oh", len(nfaStack), nfaStack)
+	}
 
 	return nfaStack[0] //returns nfa struct memory addresses(initial and accept state)
 

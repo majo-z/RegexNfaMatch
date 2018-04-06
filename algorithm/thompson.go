@@ -1,5 +1,5 @@
 //Thomson's algorithm(construction) builds NFA from regular expression (regex is in postfix notation)
-package main
+package algorithm
 
 import "fmt"
 

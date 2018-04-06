@@ -1,5 +1,5 @@
 //Shunting yard algorithm produces regular expression in postfix notation from given regular expression in infix notation
-package main
+package algorithm
 
 import "fmt"
 

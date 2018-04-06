@@ -148,6 +148,19 @@ func poMatch(poReg string, testString string) bool {
 
 func main() {
 	//postfix regular expression test matching empty string(zero number of c's) or ab or 1/more c's
-	fmt.Println(poMatch("ab.c*|", "cccc"))
+	fmt.Println("Regular expression \"ab.c*|\" matches string \"cccc\" is: ", poMatch("ab.c*|", "cccc"))
+
+	fmt.Println("Regular expression \"ab.c*|\" matches string \"ab\" is: ", poMatch("ab.c*|", "ab"))
+
+	fmt.Println("Regular expression \"ab.c*|\" matches string \"abc\" is: ", poMatch("ab.c*|", "abc"))
+
+	fmt.Println("Regular expression \"ab.c*|\" matches empty string \"\" is: ", poMatch("ab.c*|", ""))
+
+	fmt.Println("Regular expression \"ab.c*|\" matches string \"c\" is: ", poMatch("ab.c*|", "c"))
+
+	fmt.Println("Regular expression \"ab.c*|\" matches string \"cccccccccc\" is: ", poMatch("ab.c*|", "cccccccccc"))
+
+	fmt.Println("Regular expression \"ab.c*|\" matches string \"def\" is: ", poMatch("ab.c*|", "def"))
+
 
 }

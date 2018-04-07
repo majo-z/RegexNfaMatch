@@ -91,7 +91,3 @@ func postRegToNfa(pofix string) *nfa {
 
 } //postRegToNfa
 
-func main() {
-	nfa := postRegToNfa("ab.c*|") //postfix notation
-	fmt.Println(nfa)
-}

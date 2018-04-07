@@ -50,7 +50,7 @@ func postRegToNfa(pofix string) *nfa {
 			initial := state{edge1: frag1.initial, edge2: frag2.initial}
 			accept := state{} //new blank accept state
 			frag1.accept.edge1 = &accept
-			frag2.accept.edge1 = &accept//frag2 accept state is no longer accept state, it points at new created accept state
+			frag2.accept.edge1 = &accept //frag2 accept state is no longer accept state, it points at new created accept state
 
 			//push to stack new initial & accept state
 			nfaStack = append(nfaStack, &nfa{initial: &initial, accept: &accept})
@@ -89,15 +89,32 @@ func postRegToNfa(pofix string) *nfa {
 			//push new fragment to the stack
 			nfaStack = append(nfaStack, &nfa{initial: frag.initial, accept: &accept})
 
+		//question mark(zero or one)
+		case '?':
+			//pop a fragment off the stack
+			frag := nfaStack[len(nfaStack)-1]
+			nfaStack = nfaStack[:len(nfaStack)-1]
+
+			//new fragment is the old fragment with 2 extra states
+			accept := state{}
+			initial := state{edge1: frag.initial, edge2: &accept}
+
+			//it requires passing through an element at most once
+			frag.accept.edge1 = &accept
+			//frag.accept.edge2 = &accept//not needed
+
+			//push new fragment to the stack
+			nfaStack = append(nfaStack, &nfa{initial: &initial, accept: &accept})
+
 		//non special character
 		default:
 			accept := state{}
 			initial := state{symbol: r, edge1: &accept}
 			//push to stack
 			nfaStack = append(nfaStack, &nfa{initial: &initial, accept: &accept})
-		}//switch
+		} //switch
 
-	}//for
+	} //for
 
 	//if there is more than one item at the stack at the end
 	if len(nfaStack) != 1 {
@@ -107,4 +124,3 @@ func postRegToNfa(pofix string) *nfa {
 	return nfaStack[0] //returns nfa struct memory addresses(initial and accept state)
 
 } //postRegToNfa
-

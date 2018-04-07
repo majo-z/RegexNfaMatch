@@ -5,7 +5,7 @@ package algorithm
 func InToPost(infix string) string {
 
 	//map special characters into integers - order of precedence: *.|
-	specials := map[rune]int{'*': 10, '.': 9, '|': 8}
+	specials := map[rune]int{'*': 10, '+': 9, '.': 8, '|': 7}
 
 	//stack used to temporarily store operators as read from infix string
 	pofix, stack := []rune{}, []rune{}

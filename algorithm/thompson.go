@@ -55,7 +55,7 @@ func postRegToNfa(pofix string) *nfa {
 			//push to stack new initial & accept state
 			nfaStack = append(nfaStack, &nfa{initial: &initial, accept: &accept})
 
-		//kleene star
+		//kleene star(zero or more)
 		case '*':
 			//pop a fragment off the stack
 			frag := nfaStack[len(nfaStack)-1]
@@ -66,11 +66,28 @@ func postRegToNfa(pofix string) *nfa {
 			initial := state{edge1: frag.initial, edge2: &accept} //new initial state points at initial state of the fragment that was popped off and new accept state
 
 			//old except state points at its own initial state and new accept state
-			frag.accept.edge1 = frag.initial
+			frag.accept.edge1 = &initial
 			frag.accept.edge2 = &accept
 
 			//push new fragment to the stack
 			nfaStack = append(nfaStack, &nfa{initial: &initial, accept: &accept})
+
+		//plus(one or more)
+		case '+':
+			//pop a fragment off the stack
+			frag := nfaStack[len(nfaStack)-1]
+			nfaStack = nfaStack[:len(nfaStack)-1]
+
+			//new fragment is the old fragment with 2 extra states
+			accept := state{}
+			initial := state{edge1: frag.initial, edge2: &accept}
+
+			//it requires passing through an element at least once
+			frag.accept.edge1 = &initial
+			//frag.accept.edge2 = &initial//not needed
+
+			//push new fragment to the stack
+			nfaStack = append(nfaStack, &nfa{initial: frag.initial, accept: &accept})
 
 		//non special character
 		default:

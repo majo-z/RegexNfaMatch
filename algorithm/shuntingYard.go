@@ -2,7 +2,7 @@
 package algorithm
 
 //inToPost converts infix regex to postfix regex
-func inToPost(infix string) string {
+func InToPost(infix string) string {
 
 	//map special characters into integers - order of precedence: *.|
 	specials := map[rune]int{'*': 10, '.': 9, '|': 8}

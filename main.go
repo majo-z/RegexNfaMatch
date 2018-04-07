@@ -11,20 +11,29 @@ import (
 )
 
 func main() {
-	//postfix regular expression test matching empty string(zero number of c's) or ab or 1/more c's
-	fmt.Println("Regular expression \"ab.c*|\" matches string \"cccc\" is: ", algorithm.PoMatch("ab.c*|", "cccc"))
+	//infix a.b.c*
+	fmt.Println("Infix regular expression \"a.b.c*\" matches string \"abc\" is: ", algorithm.DoesMatch("a.b.c*", "abc"))//true
 
-	fmt.Println("Regular expression \"ab.c*|\" matches string \"ab\" is: ", algorithm.PoMatch("ab.c*|", "ab"))
+	fmt.Println("Infix regular expression \"a.b.c*\" matches string \"ab\" is: ", algorithm.DoesMatch("a.b.c*", "ab"))//true
 
-	fmt.Println("Regular expression \"ab.c*|\" matches string \"abc\" is: ", algorithm.PoMatch("ab.c*|", "abc"))
+	fmt.Println("Infix regular expression \"a.b.c*\" matches string \"abcccc\" is: ", algorithm.DoesMatch("a.b.c*", "abcccc"))//true
 
-	fmt.Println("Regular expression \"ab.c*|\" matches empty string \"\" is: ", algorithm.PoMatch("ab.c*|", ""))
+	fmt.Println("Infix regular expression \"a.b.c*\" matches empty string \"\" is: ", algorithm.DoesMatch("a.b.c*", ""))//false
 
-	fmt.Println("Regular expression \"ab.c*|\" matches string \"c\" is: ", algorithm.PoMatch("ab.c*|", "c"))
+	fmt.Println("Infix regular expression \"a.b.c*\"  matches string \"c\" is: ", algorithm.DoesMatch("a.b.c*", "c"))//false
 
-	fmt.Println("Regular expression \"ab.c*|\" matches string \"cccccccccc\" is: ", algorithm.PoMatch("ab.c*|", "cccccccccc"))
+	fmt.Println("Infix regular expression \"a.b.c*\" matches string \"abd\" is: ", algorithm.DoesMatch("a.b.c*", "abd"))//false
+	fmt.Println()
 
-	fmt.Println("Regular expression \"ab.c*|\" matches string \"def\" is: ", algorithm.PoMatch("ab.c*|", "def"))
+	//infix a.b.c*
+	fmt.Println("Infix regular expression \"a.b|c*\" matches string \"abc\" is: ", algorithm.DoesMatch("a.b|c*", "abc"))//false
 
+	fmt.Println("Infix regular expression \"a.b|c*\" matches string \"ab\" is: ", algorithm.DoesMatch("a.b|c*", "ab"))//true
+
+	fmt.Println("Infix regular expression \"a.b|c*\"  matches string \"ccccc\" is: ", algorithm.DoesMatch("a.b|c*", "ccccc"))//true
+
+	fmt.Println("Infix regular expression \"a.b|c*\" matches empty string \"\" is: ", algorithm.DoesMatch("a.b|c*", ""))//true
+
+	fmt.Println()
 
 }

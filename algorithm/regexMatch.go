@@ -56,5 +56,10 @@ func addState(listOfStates []*state, single *state, accept *state) []*state {
 	return listOfStates
 }//addState
 
+//build postfix regular expression from infix notation...Shunting yard algorithm(inToPost function)
+func DoesMatch(infix string, testString string) bool {
+	postFix := inToPost(infix) // convert infix into postfix
+	return PoMatch(postFix, testString)
 
+}
 

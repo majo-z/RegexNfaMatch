@@ -11,30 +11,48 @@ import (
 )
 
 func main() {
+
+	fmt.Println("Infix regex \t Postfix regex \t\t Test string \t Match")
+	fmt.Println("===========================================================")
+
 	//infix a.b.c*
-	fmt.Println("Infix regex: a.b.c*; postfix regex:", algorithm.InToPost("a.b.c*") + "; test string: abc; match:", algorithm.DoesMatch("a.b.c*", "abc"))//true
+	fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t abc \t\t\t", algorithm.DoesMatch("a.b.c*", "abc"))
 
-	fmt.Println("Infix regex: a.b.c*; postfix regex:", algorithm.InToPost("a.b.c*") + "; test string: ab; match:", algorithm.DoesMatch("a.b.c*", "ab"))//true
+	fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t ab \t\t\t", algorithm.DoesMatch("a.b.c*", "ab"))
 
-	fmt.Println("Infix regex: a.b.c*; postfix regex:", algorithm.InToPost("a.b.c*") + "; test string: abcccc; match:", algorithm.DoesMatch("a.b.c*", "abcccc"))//true
+	fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t abcccc \t\t", algorithm.DoesMatch("a.b.c*", "abcccc"))
 
-	fmt.Println("Infix regex: a.b.c*; postfix regex:", algorithm.InToPost("a.b.c*") + "; test string: \"empty string\"; match:", algorithm.DoesMatch("a.b.c*", " "))//false
+	fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t empty string \t", algorithm.DoesMatch("a.b.c*", ""))
 
-	fmt.Println("Infix regex: a.b.c*; postfix regex:", algorithm.InToPost("a.b.c*") + "; test string: c; match:", algorithm.DoesMatch("a.b.c*", "c"))//false
+	fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t c \t\t\t\t", algorithm.DoesMatch("a.b.c*", "c"))
 
-	fmt.Println("Infix regex: a.b.c*; postfix regex:", algorithm.InToPost("a.b.c*") + "; test string: abd; match:", algorithm.DoesMatch("a.b.c*", "abd"))//false
+	fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t abd \t\t\t", algorithm.DoesMatch("a.b.c*", "abd"))
 	fmt.Println()
 
-	//infix a.b.c*
-	fmt.Println("Infix regex: a.b|c*; postfix regex:", algorithm.InToPost("a.b|c*") + "; test string: abc; match:", algorithm.DoesMatch("a.b|c*", "abc"))//false
 
-	fmt.Println("Infix regex: a.b|c*; postfix regex:", algorithm.InToPost("a.b|c*") + "; test string: ab; match:", algorithm.DoesMatch("a.b|c*", "ab"))//true
+	//infix a.b|c*
+	fmt.Println("a.b|c* \t\t\t", algorithm.InToPost("a.b|c*"), "\t\t\t abc \t\t\t", algorithm.DoesMatch("a.b|c*", "abc"))
 
-	fmt.Println("Infix regex: a.b|c*; postfix regex:", algorithm.InToPost("a.b|c*") + "; test string: ccccc; match:", algorithm.DoesMatch("a.b|c*", "ccccc"))//true
+	fmt.Println("a.b|c* \t\t\t", algorithm.InToPost("a.b|c*"), "\t\t\t ab \t\t\t", algorithm.DoesMatch("a.b|c*", "ab"))
 
-	fmt.Println("Infix regex: a.b|c*; postfix regex:", algorithm.InToPost("a.b|c*") + "; test string: c; match:", algorithm.DoesMatch("a.b|c*", "c"))//true
+	fmt.Println("a.b|c* \t\t\t", algorithm.InToPost("a.b|c*"), "\t\t\t ccccc \t\t\t", algorithm.DoesMatch("a.b|c*", "ccccc"))
 
-	fmt.Println("Infix regex: a.b|c*; postfix regex:", algorithm.InToPost("a.b|c*") + "; test string: \"empty string\"; match:", algorithm.DoesMatch("a.b|c*", ""))//true
+	fmt.Println("a.b|c* \t\t\t", algorithm.InToPost("a.b|c*"), "\t\t\t empty string \t", algorithm.DoesMatch("a.b|c*", "c"))
+
+	fmt.Println("a.b|c* \t\t\t", algorithm.InToPost("a.b|c*"), "\t\t\t c \t\t\t\t", algorithm.DoesMatch("a.b|c*", "c"))
+	fmt.Println()
+
+
+	//infix a.(b|d).c*
+	fmt.Println("a.(b|d).c* \t\t", algorithm.InToPost("a.(b|d).c*"), "\t\t\t abc \t\t\t", algorithm.DoesMatch("a.(b|d).c*", "abc"))
+
+	fmt.Println("a.(b|d).c* \t\t", algorithm.InToPost("a.(b|d).c*"), "\t\t\t ab \t\t\t", algorithm.DoesMatch("a.(b|d).c*", "ab"))
+
+	fmt.Println("a.(b|d).c* \t\t", algorithm.InToPost("a.(b|d).c*"), "\t\t\t adc \t\t\t", algorithm.DoesMatch("a.(b|d).c*", "adc"))
+
+	fmt.Println("a.(b|d).c* \t\t", algorithm.InToPost("a.(b|d).c*"), "\t\t\t adcccc \t\t", algorithm.DoesMatch("a.(b|d).c*", "adcccc"))
+
+	fmt.Println("a.(b|d).c* \t\t", algorithm.InToPost("a.(b|d).c*"), "\t\t\t abdc \t\t\t", algorithm.DoesMatch("a.(b|d).c*", "abdc"))
 	fmt.Println()
 
 

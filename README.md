@@ -1,6 +1,6 @@
 # RegexToNFA - Graph Theory Project 2018
 My name is Marian and I am 3rd year software development student at GMIT. 
-Objective of this project was to build a non-deterministic finite automaton (NFA) from a regular expression and use the NFA to check if the regular expression matches a given string of text. The project has benn split into different parts. First part was to parse the regular expression from infix to postfix notation using Shunting Yard algorithm,then to build a non-deterministic finite automaton (NFA) using Thompson's algorithm(construction) and finally to implement the matching algorithm using the NFA to test a given string to determine whether it is valid or invalid. The programs has be written in Go programming language. 
+Objective of this project was to build a non-deterministic finite automaton (NFA) from a regular expression and use the NFA to check if the regular expression matches a given string of text. The project has been split into different parts. First part was to parse the regular expression from infix to postfix notation using Shunting Yard algorithm,then to build a non-deterministic finite automaton (NFA) using Thompson's algorithm(construction) and finally to implement the matching algorithm using the NFA to test a given string to determine whether it is valid or invalid. The programs has be written in Go programming language.
 
 ## How the project was created
 1. I have created Shunting yard algorithm that converts infix regular expression into postfix regular expression. The output of this algorithm is regular expression in postfix notation.
@@ -17,7 +17,7 @@ We assume you are using the command line.
 
 1. Open the Git Bash and clone the repository 
 ```bash
-> git clone https://github.com/majo-z/RegexNfaMatch
+> git clone [https://github.com/majo-z/RegexNfaMatch]
 ```
 2. Change into the folder.
 ```bash
@@ -31,7 +31,7 @@ We assume you are using the command line.
 ```bash
 > main.exe
 ```
-5. Alternatively, you can run the program without compiling and producing executable file as follows:
+5. Alternatively, you can run the program without producing executable file as follows:
 ```bash
 >go run main.go
 ```

@@ -17,7 +17,7 @@ We assume you are using the command line.
 
 1. Open the Git Bash and clone the repository 
 ```bash
-> git clone [https://github.com/majo-z/RegexNfaMatch]
+> git clone https://github.com/majo-z/RegexNfaMatch
 ```
 2. Change into the folder.
 ```bash

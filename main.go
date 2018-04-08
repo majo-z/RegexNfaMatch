@@ -63,58 +63,60 @@ func printExamples() {
 	fmt.Println("===========================================================")
 
 	//infix a.b.c*
-	//fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t abc \t\t\t", algorithm.DoesMatch("a.b.c*", "abc"))
-	//
-	//fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t ab \t\t\t", algorithm.DoesMatch("a.b.c*", "ab"))
-	//
-	//fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t abcccc \t\t", algorithm.DoesMatch("a.b.c*", "abcccc"))
-	//
-	//fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t empty string \t", algorithm.DoesMatch("a.b.c*", ""))
-	//
-	//fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t c \t\t\t\t", algorithm.DoesMatch("a.b.c*", "c"))
-	//
-	//fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t abd \t\t\t", algorithm.DoesMatch("a.b.c*", "abd"))
-	//fmt.Println()
-	//
-	////infix a.b|c*
-	//fmt.Println("a.b|c* \t\t\t", algorithm.InToPost("a.b|c*"), "\t\t\t abc \t\t\t", algorithm.DoesMatch("a.b|c*", "abc"))
-	//
-	//fmt.Println("a.b|c* \t\t\t", algorithm.InToPost("a.b|c*"), "\t\t\t ab \t\t\t", algorithm.DoesMatch("a.b|c*", "ab"))
-	//
-	//fmt.Println("a.b|c* \t\t\t", algorithm.InToPost("a.b|c*"), "\t\t\t ccccc \t\t\t", algorithm.DoesMatch("a.b|c*", "ccccc"))
-	//
-	//fmt.Println("a.b|c* \t\t\t", algorithm.InToPost("a.b|c*"), "\t\t\t empty string \t", algorithm.DoesMatch("a.b|c*", "c"))
-	//
-	//fmt.Println("a.b|c* \t\t\t", algorithm.InToPost("a.b|c*"), "\t\t\t c \t\t\t\t", algorithm.DoesMatch("a.b|c*", "c"))
-	//fmt.Println()
-	//
-	////infix a.(b|d).c*
-	//fmt.Println("a.(b|d).c* \t\t", algorithm.InToPost("a.(b|d).c*"), "\t\t\t abc \t\t\t", algorithm.DoesMatch("a.(b|d).c*", "abc"))
-	//
-	//fmt.Println("a.(b|d).c* \t\t", algorithm.InToPost("a.(b|d).c*"), "\t\t\t ab \t\t\t", algorithm.DoesMatch("a.(b|d).c*", "ab"))
-	//
-	//fmt.Println("a.(b|d).c* \t\t", algorithm.InToPost("a.(b|d).c*"), "\t\t\t adc \t\t\t", algorithm.DoesMatch("a.(b|d).c*", "adc"))
-	//
-	//fmt.Println("a.(b|d).c* \t\t", algorithm.InToPost("a.(b|d).c*"), "\t\t\t adcccc \t\t", algorithm.DoesMatch("a.(b|d).c*", "adcccc"))
-	//
-	//fmt.Println("a.(b|d).c* \t\t", algorithm.InToPost("a.(b|d).c*"), "\t\t\t abdc \t\t\t", algorithm.DoesMatch("a.(b|d).c*", "abdc"))
-	//fmt.Println()
-	//
-	////infix a.(b.b)+.c*
-	//fmt.Println("a.(b.b)+.c* \t", algorithm.InToPost("a.(b.b)+.c*"), "\t\t\t abbc \t\t\t", algorithm.DoesMatch("a.(b.b)+.c*", "abbc"))
-	//
-	//fmt.Println("a.(b.b)+.c* \t", algorithm.InToPost("a.(b.b)+.c*"), "\t\t\t abb \t\t\t", algorithm.DoesMatch("a.(b.b)+.c*", "abb"))
-	//
-	//fmt.Println("a.(b.b)+.c* \t", algorithm.InToPost("a.(b.b)+.c*"), "\t\t\t ac \t\t\t", algorithm.DoesMatch("a.(b.b)+.c*", "ac"))
-	//
-	//fmt.Println("a.(b.b)+.c*.d+ \t", algorithm.InToPost("a.(b.b)+.c*.d+"), "\t\t abbcd \t\t\t", algorithm.DoesMatch("a.(b.b)+.c*.d+", "abbcd"))
-	//
-	//fmt.Println("a.(b.b)+.c*.d+ \t", algorithm.InToPost("a.(b.b)+.c*.d+"), "\t\t abbc \t\t\t", algorithm.DoesMatch("a.(b.b)+.c*.d+", "abbc"))
-	//
-	//fmt.Println("a.(b.b)+.c*.d+ \t", algorithm.InToPost("a.(b.b)+.c*.d+"), "\t\t abbcccddd \t\t", algorithm.DoesMatch("a.(b.b)+.c*.d+", "abbcccddd"))
-	//
-	//fmt.Println("a.(b.b)+.c*.d+ \t", algorithm.InToPost("a.(b.b)+.c*.d+"), "\t\t abbbbcccddd \t", algorithm.DoesMatch("a.(b.b)+.c*.d+", "abbbbcccddd"))
-	//fmt.Println()
+	fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t abc \t\t\t", algorithm.DoesMatch("a.b.c*", "abc"))
+
+	fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t ab \t\t\t", algorithm.DoesMatch("a.b.c*", "ab"))
+
+	fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t abcccc \t\t", algorithm.DoesMatch("a.b.c*", "abcccc"))
+
+	fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t empty string \t", algorithm.DoesMatch("a.b.c*", ""))
+
+	fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t c \t\t\t\t", algorithm.DoesMatch("a.b.c*", "c"))
+
+	fmt.Println("a.b.c* \t\t\t", algorithm.InToPost("a.b.c*"), "\t\t\t abd \t\t\t", algorithm.DoesMatch("a.b.c*", "abd"))
+	fmt.Println()
+
+	//infix a.b|c*
+	fmt.Println("a.b|c* \t\t\t", algorithm.InToPost("a.b|c*"), "\t\t\t abc \t\t\t", algorithm.DoesMatch("a.b|c*", "abc"))
+
+	fmt.Println("a.b|c* \t\t\t", algorithm.InToPost("a.b|c*"), "\t\t\t ab \t\t\t", algorithm.DoesMatch("a.b|c*", "ab"))
+
+	fmt.Println("a.b|c* \t\t\t", algorithm.InToPost("a.b|c*"), "\t\t\t ccccc \t\t\t", algorithm.DoesMatch("a.b|c*", "ccccc"))
+
+	fmt.Println("a.b|c* \t\t\t", algorithm.InToPost("a.b|c*"), "\t\t\t empty string \t", algorithm.DoesMatch("a.b|c*", "c"))
+
+	fmt.Println("a.b|c* \t\t\t", algorithm.InToPost("a.b|c*"), "\t\t\t c \t\t\t\t", algorithm.DoesMatch("a.b|c*", "c"))
+	fmt.Println()
+
+	//infix a.(b|d).c*
+	fmt.Println("a.(b|d).c* \t\t", algorithm.InToPost("a.(b|d).c*"), "\t\t\t abc \t\t\t", algorithm.DoesMatch("a.(b|d).c*", "abc"))
+
+	fmt.Println("a.(b|d).c* \t\t", algorithm.InToPost("a.(b|d).c*"), "\t\t\t ab \t\t\t", algorithm.DoesMatch("a.(b|d).c*", "ab"))
+
+	fmt.Println("a.(b|d).c* \t\t", algorithm.InToPost("a.(b|d).c*"), "\t\t\t adc \t\t\t", algorithm.DoesMatch("a.(b|d).c*", "adc"))
+
+	fmt.Println("a.(b|d).c* \t\t", algorithm.InToPost("a.(b|d).c*"), "\t\t\t adcccc \t\t", algorithm.DoesMatch("a.(b|d).c*", "adcccc"))
+
+	fmt.Println("a.(b|d).c* \t\t", algorithm.InToPost("a.(b|d).c*"), "\t\t\t abdc \t\t\t", algorithm.DoesMatch("a.(b|d).c*", "abdc"))
+	fmt.Println()
+
+	//infix a.(b.b)+.c*
+	fmt.Println("a.(b.b)+.c* \t", algorithm.InToPost("a.(b.b)+.c*"), "\t\t\t abbc \t\t\t", algorithm.DoesMatch("a.(b.b)+.c*", "abbc"))
+
+	fmt.Println("a.(b.b)+.c* \t", algorithm.InToPost("a.(b.b)+.c*"), "\t\t\t abb \t\t\t", algorithm.DoesMatch("a.(b.b)+.c*", "abb"))
+
+	fmt.Println("a.(b.b)+.c* \t", algorithm.InToPost("a.(b.b)+.c*"), "\t\t\t ac \t\t\t", algorithm.DoesMatch("a.(b.b)+.c*", "ac"))
+	fmt.Println()
+
+	//infix a.(b.b)+.c*.d+
+	fmt.Println("a.(b.b)+.c*.d+ \t", algorithm.InToPost("a.(b.b)+.c*.d+"), "\t\t abbcd \t\t\t", algorithm.DoesMatch("a.(b.b)+.c*.d+", "abbcd"))
+
+	fmt.Println("a.(b.b)+.c*.d+ \t", algorithm.InToPost("a.(b.b)+.c*.d+"), "\t\t abbc \t\t\t", algorithm.DoesMatch("a.(b.b)+.c*.d+", "abbc"))
+
+	fmt.Println("a.(b.b)+.c*.d+ \t", algorithm.InToPost("a.(b.b)+.c*.d+"), "\t\t abbcccddd \t\t", algorithm.DoesMatch("a.(b.b)+.c*.d+", "abbcccddd"))
+
+	fmt.Println("a.(b.b)+.c*.d+ \t", algorithm.InToPost("a.(b.b)+.c*.d+"), "\t\t abbbbcccddd \t", algorithm.DoesMatch("a.(b.b)+.c*.d+", "abbbbcccddd"))
+	fmt.Println()
 
 	//infix a.(b.b)+.c?
 	fmt.Println("a.(b.b)+.c? \t", algorithm.InToPost("a.(b.b)+.c?"), "\t\t\t abb \t\t\t", algorithm.DoesMatch("a.(b.b)+.c?", "abb"))

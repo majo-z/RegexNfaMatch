@@ -1,7 +1,7 @@
 package algorithm
 
 //poMatch runs string against regular expression to evaluate if it's valid
-func PoMatch(poReg string, testString string) bool {//change poMatch to PoMatch to be seen outside of the package
+func PoMatch(poReg string, testString string) bool { //change poMatch to PoMatch to be seen outside of the package
 
 	isMatch := false             //string doesn't match the regular expression
 	poNfa := postRegToNfa(poReg) //link list of states..creates NFA from regex
@@ -40,11 +40,10 @@ func PoMatch(poReg string, testString string) bool {//change poMatch to PoMatch 
 	return isMatch
 } //poMatch
 
-
 //add the state to current array, also add any states to get from that state along ϵ arrows
 func addState(listOfStates []*state, single *state, accept *state) []*state {
 
-	listOfStates = append(listOfStates, single)//pass the state
+	listOfStates = append(listOfStates, single) //pass the state
 
 	//check if it's one of the states that has ϵ arrows coming from it
 	if single != accept && single.symbol == 0 { //zero value of rune
@@ -54,7 +53,7 @@ func addState(listOfStates []*state, single *state, accept *state) []*state {
 		}
 	}
 	return listOfStates
-}//addState
+} //addState
 
 //build postfix regular expression from infix notation...Shunting yard algorithm(inToPost function)
 func DoesMatch(infix string, testString string) bool {
@@ -62,4 +61,3 @@ func DoesMatch(infix string, testString string) bool {
 	return PoMatch(postFix, testString)
 
 }
-

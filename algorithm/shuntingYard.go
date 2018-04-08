@@ -5,7 +5,7 @@ package algorithm
 func InToPost(infix string) string {
 
 	//map special characters into integers - order of precedence: *.|
-	specials := map[rune]int{'*': 10, '+': 9, '?': 8,'.': 7, '|': 6}
+	specials := map[rune]int{'*': 10, '+': 9, '?': 8, '.': 7, '|': 6}
 
 	//stack used to temporarily store operators as read from infix string
 	pofix, stack := []rune{}, []rune{}
@@ -24,7 +24,7 @@ func InToPost(infix string) string {
 			for stack[len(stack)-1] != '(' {
 
 				pofix = append(pofix, stack[len(stack)-1]) //pop the chars off the stack and append on to postfix(output)
-				stack = stack[:len(stack)-1] // colon means up to last character
+				stack = stack[:len(stack)-1]               // colon means up to last character
 			}
 			stack = stack[:len(stack)-1] //pop bracket "(" off the end of the stack
 
@@ -34,7 +34,7 @@ func InToPost(infix string) string {
 			for len(stack) > 0 && specials[r] <= specials[stack[len(stack)-1]] {
 				pofix, stack = append(pofix, stack[len(stack)-1]), stack[:len(stack)-1]
 			}
-			stack = append(stack, r)//element of the stack has less precedence
+			stack = append(stack, r) //element of the stack has less precedence
 
 		default: //r is neither a bracket nor a special character(may be a, b, c, d...)
 			pofix = append(pofix, r)
@@ -50,4 +50,3 @@ func InToPost(infix string) string {
 
 	return string(pofix) //cast/convert pofix(runes) to return back a string
 }
-

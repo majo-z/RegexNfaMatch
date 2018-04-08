@@ -6,11 +6,12 @@
 package main
 
 import (
-	"fmt"
 	"./algorithm"
 	"bufio"
+	"fmt"
 	"os"
 )
+
 // global scanner
 var scanner *bufio.Scanner
 
@@ -30,13 +31,13 @@ func main() {
 			printExamples()
 		case "3":
 			fmt.Println("Goodbye")
-			return//return back to menu option
+			return //return back to menu option
 		default:
 			fmt.Println("Incorrect option, please enter 1, 2 or 3")
 		}
 	}
 
-}//main
+} //main
 
 func readInput() {
 	fmt.Println("Enter infix regex:")
@@ -47,10 +48,10 @@ func readInput() {
 	scanner.Scan()
 	testString := scanner.Text()
 
-	if algorithm.DoesMatch(regex, testString){
+	if algorithm.DoesMatch(regex, testString) {
 		fmt.Println("the regular expression", regex, "matched the string", testString)
 
-	}else{
+	} else {
 		fmt.Println("the regular expression", regex, "didn't match the string", testString)
 
 	}
@@ -126,7 +127,6 @@ func printExamples() {
 	fmt.Println("a.(b.b)+.c? \t", algorithm.InToPost("a.(b.b)+.c?"), "\t\t\t abbcc \t\t\t", algorithm.DoesMatch("a.(b.b)+.c?", "abbcc"))
 	fmt.Println()
 
-
 	//infix a.b?.c+
 	fmt.Println("a.b?.c+ \t\t", algorithm.InToPost("a.b?.c+"), "\t\t\t a \t\t\t\t", algorithm.DoesMatch("a.b?.c+", "a"))
 
@@ -139,4 +139,4 @@ func printExamples() {
 	fmt.Println("a.b?.c+ \t\t", algorithm.InToPost("a.b?.c+"), "\t\t\t abccc \t\t\t", algorithm.DoesMatch("a.b?.c+", "abccc"))
 	fmt.Println()
 
-}//printExamples
+} //printExamples
